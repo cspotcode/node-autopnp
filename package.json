@@ -9,6 +9,7 @@
   "license": "MIT",
   "dependencies": {
     "@types/node": "^14.14.9",
+    "@yarnpkg/cli": "^2.3.3",
     "@yarnpkg/core": "^2.3.1",
     "@yarnpkg/fslib": "^2.3.0",
     "ts-node": "^9.0.0",
