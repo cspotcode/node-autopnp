@@ -4,6 +4,7 @@ import type { InstallIntoCacheIfNeededRequest, InstallIntoCacheIfNeededResponse,
 
 interface ModuleInternal {
     _resolveFilename(request: string, parent: NodeModule, isMain: boolean, options: any): void;
+    findPnpApi(lookupSource: URL | string): unknown;
 }
 
 export function installResolverHook() {
@@ -34,7 +35,7 @@ export function installResolverHook() {
 
         const response = callToWorker({ type: 'installIntoCacheIfNeeded', moduleName, version });
         const { absoluteCacheDirectory, type } = response;
-        console.dir(response);
+        (Module as any as ModuleInternal).findPnpApi(absoluteCacheDirectory); // is this necessary?  How to fix the ajv failure?
         return createRequire(absoluteCacheDirectory).resolve(`${moduleName}${rest}`);
     }
 

@@ -1,3 +1,18 @@
+*This is a rapid prototype.*
+
+## The idea:
+
+Be able to use modules without any preinstallation, like on deno, but using node and the npm ecosystem.
+
+```
+#!/usr/bin/env node-autopnp
+
+const _ = require('autopnp:lodash@latest');
+_.map(...);
+
+const ajvManifest = require('autopnp:ajv@6.12.6/package.json');
+```
+
 ## How it works:
 
 Load Yarn PnP and a custom `_resolveFilename` hook.  Custom hook intercepts `require('autopnp:<package name>@<package version>')` and automatically gives you the module you required by installing it into cache via yarn 2 PnP.
