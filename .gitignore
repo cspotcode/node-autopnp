@@ -2,3 +2,6 @@
 /.yarn/install-state.gz
 /dist
 /.autopnp
+/package-lock.json
+/tsconfig.tsbuildinfo
+/node_modules

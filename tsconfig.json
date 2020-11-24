@@ -5,7 +5,8 @@
         "moduleResolution": "node",
         "rootDir": "src",
         "outDir": "dist",
-        "esModuleInterop": true
+        "esModuleInterop": true,
+        "incremental": true
     },
     "include": ["src"]
 }
