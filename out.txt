@@ -1,0 +1,70 @@
+# This log created by doing a fresh clone and running `./reproduction.sh &> out.txt`, then adding this comment manually
+
+rm: cannot remove '.pnp.js': No such file or directory
+rm: cannot remove '.yarnrc.yml': No such file or directory
+rm: cannot remove 'yarn.lock': No such file or directory
+npm WARN autopnp@1.0.0 No repository field.
+
+audited 189 packages in 1.549s
+
+25 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+------
+Attempting to require lodash, which does not have any dependencies
+[
+  'templateSettings', 'after',          'ary',              'assign',
+  'assignIn',         'assignInWith',   'assignWith',       'at',
+  'before',           'bind',           'bindAll',          'bindKey',
+  'castArray',        'chain',          'chunk',            'compact',
+  'concat',           'cond',           'conforms',         'constant',
+  'countBy',          'create',         'curry',            'curryRight',
+  'debounce',         'defaults',       'defaultsDeep',     'defer',
+  'delay',            'difference',     'differenceBy',     'differenceWith',
+  'drop',             'dropRight',      'dropRightWhile',   'dropWhile',
+  'fill',             'filter',         'flatMap',          'flatMapDeep',
+  'flatMapDepth',     'flatten',        'flattenDeep',      'flattenDepth',
+  'flip',             'flow',           'flowRight',        'fromPairs',
+  'functions',        'functionsIn',    'groupBy',          'initial',
+  'intersection',     'intersectionBy', 'intersectionWith', 'invert',
+  'invertBy',         'invokeMap',      'iteratee',         'keyBy',
+  'keys',             'keysIn',         'map',              'mapKeys',
+  'mapValues',        'matches',        'matchesProperty',  'memoize',
+  'merge',            'mergeWith',      'method',           'methodOf',
+  'mixin',            'negate',         'nthArg',           'omit',
+  'omitBy',           'once',           'orderBy',          'over',
+  'overArgs',         'overEvery',      'overSome',         'partial',
+  'partialRight',     'partition',      'pick',             'pickBy',
+  'property',         'propertyOf',     'pull',             'pullAll',
+  'pullAllBy',        'pullAllWith',    'pullAt',           'range',
+  'rangeRight',       'rearg',          'reject',           'remove',
+  ... 208 more items
+]
+----
+Attempting to require execa, which has dependencies
+Resolves to: /d/Personal-dev/@cspotcode/node-autopnp2/.autopnp/yarn-cache/execa-npm-4.1.0-cc675b4189-79bd736acd.zip/node_modules/execa/index.js
+/d/Personal-dev/@cspotcode/node-autopnp2/empty-pnp/.pnp.js:4865
+    throw firstError;
+    ^
+
+Error: Cannot find module 'strip-final-newline'
+Require stack:
+- /d/Personal-dev/@cspotcode/node-autopnp2/.autopnp/yarn-cache/execa-npm-4.1.0-cc675b4189-79bd736acd.zip/node_modules/execa/index.js
+- /d/Personal-dev/@cspotcode/node-autopnp2/examples/reproduction.js
+Require stack:
+- /d/Personal-dev/@cspotcode/node-autopnp2/.autopnp/yarn-cache/execa-npm-4.1.0-cc675b4189-79bd736acd.zip/node_modules/execa/index.js
+- /d/Personal-dev/@cspotcode/node-autopnp2/examples/reproduction.js
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:1080:15)
+    at Function.external_module_.Module._resolveFilename (/d/Personal-dev/@cspotcode/node-autopnp2/empty-pnp/.pnp.js:4845:54)
+    at Function._resolveFilename (/d/Personal-dev/@cspotcode/node-autopnp2/dist/resolver-hook.js:25:50)
+    at Module._load (internal/modules/cjs/loader.js:923:27)
+    at Function.external_module_.Module._load (/d/Personal-dev/@cspotcode/node-autopnp2/empty-pnp/.pnp.js:4701:36)
+    at Module.require (internal/modules/cjs/loader.js:1140:19)
+    at require (internal/modules/cjs/helpers.js:75:18)
+    at Object.<anonymous> (/d/Personal-dev/@cspotcode/node-autopnp2/.autopnp/yarn-cache/execa-npm-4.1.0-cc675b4189-79bd736acd.zip/node_modules/execa/index.js:5:27)
+    at Module._compile (internal/modules/cjs/loader.js:1251:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1272:10) {
+  code: 'MODULE_NOT_FOUND'
+}
